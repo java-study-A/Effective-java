@@ -3,13 +3,13 @@
 <table>
     <tr>
         <td>
-            <a href="https://github.com/top-hoon">
-                <img src="https://avatars.githubusercontent.com/u/44155993?v=4" width="30" height="30" alt=""/>
+            <a href="https://github.com/top-hoon"> 
+                <img src="https://avatars.githubusercontent.com/u/79463595?v=4" width="30" height="30" alt=""/>
             </a>
         </td>
         <td>
             <a href="https://github.com/jinseoyoung2">
-                <img src="https://avatars.githubusercontent.com/u/79463595?v=4" width="30" height="30" alt=""/>
+                <img src="https://avatars.githubusercontent.com/u/44155993?v=4" width="30" height="30" alt=""/>
             </a>
         </td>
     </tr>
