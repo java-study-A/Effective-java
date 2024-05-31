@@ -3,4 +3,4 @@
 ## 일정
 - 2024/05/26 ~ 2024/07/01
 
-site : alpha.co.kr
+## [pages 주소](https:alpha.co.kr)
