@@ -59,8 +59,48 @@
 </compare>
 
 ## 장점
+### 1. 만들어주는 객체를 이름으로 구분하기 쉽다.
+<code-block lang="java">
+    public class Order {
+        private boolean prime;
+        private boolean urgent;
+        private Product product;
+        public static Order createPrimeOrder(Product product) {
+            return new Order(product, true);
+        }
+        public static Order createUrgentOrder(Product product) {
+            return new Order(product, true);
+        }
+    }
+</code-block>
 
-
+### 2. 호출될 때마다 인스턴스를 새로 생성하지 않아도 된다.
+- 특히 생성 비용이 큰 객체가 자주 요청되는 상황이라면 성능을 상당히 끌어올릴 수 잇다.
+- 반복되는 요청에 같은 객체를 반환하는 식으로 인스턴스 통제를 할 수 있다.
+- [플라이웨이트 패턴](#참고) 도 이와 비슷한 기법이라 할 수 있다.
+- 한개의 인스턴스만 만들어서 사용하는 경우
+<code-block lang="java">
+    public class Settings {
+            private boolean useAutoSteering;
+            private boolean useABS;
+            private Difficulty difficulty;
+            private Settings() {}
+            private static final Settings SETTINGS = new Settings();
+            public static Settings newInstance(){
+                    return SETTINGS;
+            }
+    }
+    public class Product {
+		public static void main(String[] args) {
+				Settings settings1 = Settings.newInstance();
+				Settings settings1 = Settings.newInstance();
+				System.out.println(settings1);
+				System.out.println(settings2);
+		}
+    }   
+</code-block>
+- 이렇게 생성해서 본다면 각 인스턴스들의 해쉬코드가 같다 -> 같은 인스턴스를 반환한다.
+ 
 ## 단점
 - 상속을 사용하려면 public 이나 protected 생성자가 필요하니 정적팩터리 메서드만 제공하면 하위클래스 x (생성자를 다 막아놨을 경우)
 - 정적 팩터리 메서드는 프로그래머가 찾기 어렵다. (생성자는 new 키워드로 찾을 수 있지만, 정적 팩터리 메서드는 이름을 가질 수 있기 때문에 찾기 어렵다)
@@ -94,7 +134,7 @@
 // 이런식으로 하면 쉽게 찾기 가능 정적 팩터리 메서드를 사용하는 클래스에는 이런식으로 주석을 달아놓으면 좋다.
 </code-block>
 
-## 참고
+## 참고 {id="참고"}
 - [flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern)
 - [flyweight pattern blog](https://lee1535.tistory.com/106)
 - 플라이 웨이트 패턴이 언급되는 이유는, 정적 패터리 메소드는 플라이웨이트 패턴처럼 인스턴스를 통제하기 떄문에 -> (같은 객체가 자주 요청되는 상황)사용하는 객체들을 미리 만들어 놓고, 필요할 때마다 반환하는 방식 
