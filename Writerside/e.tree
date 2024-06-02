@@ -9,7 +9,10 @@
     <toc-element topic="effective-java.md"/>
     <toc-element topic="overview.md"/>
     <toc-element topic="week-1.md">
-        <toc-element topic="Item-1.md"/>
+        <toc-element topic="Item-1.md">
+            <toc-element topic="perfect-strategy2-flyweight-pattern.md"/>
+            <toc-element topic="perfect-strategy1-ENUM.md"/>
+        </toc-element>
         <toc-element topic="Item-2.md"/>
         <toc-element topic="Item-3.md"/>
     </toc-element>
