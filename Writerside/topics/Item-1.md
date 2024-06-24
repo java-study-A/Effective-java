@@ -134,6 +134,8 @@
 // 이런식으로 하면 쉽게 찾기 가능 정적 팩터리 메서드를 사용하는 클래스에는 이런식으로 주석을 달아놓으면 좋다.
 </code-block>
 
+
+
 ## 참고 {id="cf"}
 - [flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern)
 - [flyweight pattern blog](https://lee1535.tistory.com/106)
